@@ -1,0 +1,29 @@
+Script started on Fri Apr  8 06:25:55 2016
+[?1034hbash-3.2$ pwd
+/Users/herrc/.vim
+bash-3.2$ cd ~
+bash-3.2$ pwd
+/Users/herrc
+bash-3.2$ git init
+Initialized empty Git repository in /Users/herrc/.git/
+bash-3.2$ echo "*" > .gitignore
+bash-3.2$ ls ~/.vim*
+/Users/herrc/.viminfo    /Users/herrc/.vimrc-test
+/Users/herrc/.vimrc      /Users/herrc/.vimrc_bak
+
+/Users/herrc/.vim:
+README.rst [1m[34mbundle[39;49m[0m     [1m[34mdoc[39;49m[0m        [1m[34mplugin[39;49m[0m     tags-te
+[1m[34mautoload[39;49m[0m   [1m[34mcolors[39;49m[0m     dotfiles   tags
+
+/Users/herrc/.vim_bak:
+README.markdown   [1m[34mbundle[39;49m[0m            [1m[34mplugin[39;49m[0m            [1m[34msnippets[39;49m[0m
+[1m[34mafter[39;49m[0m             [1m[34mdoc[39;49m[0m               plugin-info.txt   [1m[34msyntax[39;49m[0m
+[1m[34mautoload[39;49m[0m          [1m[34mftplugin[39;49m[0m          [1m[34mpyflakes-pathogen[39;49m[0m
+bash-3.2$ git add -f .vimrc
+bash-3.2$ git add -f .vim
+bash-3.2$ git add -f .vimrc_bak
+bash-3.2$ git add -f .vim_bak
+bash-3.2$ exit
+exit
+
+Script done on Fri Apr  8 06:41:44 2016

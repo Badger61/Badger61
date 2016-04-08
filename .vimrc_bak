@@ -1,0 +1,147 @@
+set nocompatible
+
+" Set the <leader> key
+let mapleader = ','
+
+" The following is for pathogen
+" execute pathogen#infect()
+"
+" The following were set up for Vundle
+"
+filetype off
+" call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" let Vundle manage Vundle
+" required! 
+
+Bundle 'gmarik/vundle'
+"Bundle 'Rykka/riv.vim'
+Bundle 'tpope/vim-fugitive'
+
+filetype plugin indent on
+
+ "
+ " Brief help
+ " :BundleList          - list configured bundles
+ " :BundleInstall(!)    - install(update) bundles
+ " :BundleSearch(!) foo - search(or refresh cache first) for foo
+ " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+ "
+ " see :h vundle for more details or wiki for FAQ
+ " NOTE: comments after Bundle command are not allowed..
+
+ " For highlighting
+syntax enable
+syntax on
+set background=dark
+colorscheme darkblue2
+
+" The following additions to vim follow the blog at 
+" http://paintincode.blogspot.com/2011/04/mac-vim-setup-for-python-programming.html
+" =================================================================================
+"
+"For dark lucius use the following:
+"syntax on
+"colorscheme lucius
+"colorscheme mustang
+"set background=dark
+
+" Set the font to Monaco 12
+set gfn=Monaco:h14
+
+" Set the page command stuff
+set tabstop=8
+set shiftwidth=4
+set expandtab
+set softtabstop=4
+set smartindent
+set autoindent
+
+set hlsearch
+set incsearch
+set showmatch
+
+set number
+
+
+" Turn on filetype detection for taglist
+filetype on
+filetype plugin on
+
+" Turn syntax highlighting on
+syntax on
+
+" Bind F8 to ctags to enable regeneration of tags on the fly
+nnoremap <F8> :!/opt/local/bin/ctags -R --python-kinds=-i *.py<CR>
+
+" Bind F4 to :TlistToggle. This will open the tag list
+nnoremap <F4> :TlistToggle<CR>
+
+" Turn on omni completion
+set omnifunc=syntaxcomplete#complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+" To use omni completion, type <C-X><C-O> while open in Insert mode. If matching names are found, a pop-up menu opens which can be navigated using the <C-N> and <C-P> keys.
+
+" END OF VIM ADDITIONS FROM PAINTINCODE BLOGSPOT
+"
+" Set status line 
+set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set laststatus=2
+
+" SPELL CHECKING STUFF
+setlocal spell spelllang=en_us
+
+" LaTeX abbreviations
+
+map! \ba {\bf a}
+map! \bx {\bf x}
+map! \bX {\bf X}
+map! \bl {\bf l}
+map! \cP {\cal P}
+
+" Press <F5> in normal mode or in insert mode to insert the current datestamp:
+" See: http://vim.wikia.com/wiki/Insert_current_date_or_time for more
+" information and various versions of the datetime insertion.
+:nnoremap <F5> "=strftime("%a %b %d %Y")<CR>P
+:inoremap <F5> <C-R>=strftime("%a %b %d %Y")<CR>
+
+" Linking markdown files to the Marked app for preview
+:nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+
+" Syntax highlighting for .md files. The standard vim setup treats these as
+" Modula-2 files, so we need to change that.
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Use LaTeX math in markdown
+let g:vim_markdown_math=1
+
+" Setup for code folding
+set foldmethod=indent
+set foldlevel=99
+
+" Shortcuts for moving between split windows
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+" To open TaskList
+map <leader>td <Plug>TaskList
+
+" To use Gundo
+map <leader>g :GundoToggle<CR>
+
+" To jump to each pep8 violation in the quickfix window
+let g:pep8_map='<leader>8'
+
+" Configure SuperTab plugin to check the context of code
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+
+
+
+
