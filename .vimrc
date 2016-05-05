@@ -22,9 +22,12 @@ Plugin 'Rykka/riv.vim'
 " :PluginUpdate or :PluginInstall! 
 " in a vim session.
 "
-Plugin 'scrooloose/nerdtree.git'
-
- "
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround.git' " Surround items with markups
+Plugin 'morhetz/gruvbox'
+Plugin 'tpope/vim-repeat.git'  " Enable . command to repeat surround commands
+Plugin 'Valloric/YouCompleteMe' " Bundle for syntax auto-completion
+"
  " Brief help on vundle
  " :BundleList          - list configured bundles
  " :BundleInstall(!)    - install(update) bundles
@@ -33,9 +36,10 @@ Plugin 'scrooloose/nerdtree.git'
  "
  " see :h vundle for more details or wiki for FAQ
  " NOTE: comments after Bundle command are not allowed..
-" }}}
 
 filetype plugin indent on  " Done with vundle
+" }}}
+
 " General {{{
 set nocompatible " Turn off vi compatibility to enable lots of features in vim
 set ru " Show the ruler for the cursor
@@ -61,7 +65,8 @@ set showmatch " highlight matching for [{()}]
 syntax enable
 syntax on
 set background=dark
-colorscheme badwolf
+" colorscheme badwolf
+colorscheme gruvbox
 " }}}
 "
 " Searching {{{
@@ -93,6 +98,9 @@ inoremap jk <esc>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader><space> za " Use space to fold and unfold
 nnoremap <leader>nt :NERDTree<CR>
+nnoremap <leader>U gUiw " Change word to upper case
+" Open html file built in sphinx
+nnoremap <leader>od :!open ./_build/html/index.html<CR>
 
 " Shortcuts for moving between split windows
 map <c-j> <c-w>j
@@ -100,6 +108,7 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+vnoremap . :normal .<cr>
 " }}}
 "
 " Editing {{{
