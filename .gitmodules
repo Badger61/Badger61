@@ -1,0 +1,3 @@
+[submodule "Google_Drive/blog2/plugins/ipynb"]
+	path = Google_Drive/blog2/plugins/ipynb
+	url = git://github.com/danielfrg/pelican-ipynb.git
