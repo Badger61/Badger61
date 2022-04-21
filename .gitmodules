@@ -1,3 +1,6 @@
 [submodule "Google_Drive/blog2/plugins/ipynb"]
 	path = Google_Drive/blog2/plugins/ipynb
 	url = git://github.com/danielfrg/pelican-ipynb.git
+[submodule "Google_Drive/blog/pelican-plugins"]
+	path = Google_Drive/blog/pelican-plugins
+	url = https://github.com/getpelican/pelican-plugins
